@@ -1,15 +1,16 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CampoFormulario from '../components/CampoFormulario.jsx'
 import ResumoCompra from '../components/ResumoCompra.jsx'
+import { usePagamento } from '../hooks/usePagamento.js'
 import { useProdutos } from '../hooks/useProdutos.js'
 import { cartaoSchema } from '../schemas/cartaoSchema.js'
 import { formatarBRL } from '../utils/moeda.js'
 
 export default function Pagamento() {
   const { carregando, erro, total, quantidadeDeItens } = useProdutos()
-  const navigate = useNavigate()
+  const { processando, pagar } = usePagamento()
 
   const {
     register,
@@ -19,10 +20,6 @@ export default function Pagamento() {
     resolver: zodResolver(cartaoSchema),
     defaultValues: { titular: '', numero: '', validade: '', cvv: '' },
   })
-
-  function aoEnviar() {
-    navigate('/sucesso')
-  }
 
   return (
     <section aria-labelledby="titulo-pagamento">
@@ -48,7 +45,7 @@ export default function Pagamento() {
           <form
             className="painel formulario"
             aria-labelledby="titulo-dados-cartao"
-            onSubmit={handleSubmit(aoEnviar)}
+            onSubmit={handleSubmit(pagar)}
             noValidate
           >
             <h2 id="titulo-dados-cartao">Dados do cartão</h2>
@@ -96,9 +93,17 @@ export default function Pagamento() {
               />
             </div>
 
-            <button className="botao botao--primario botao--largo" type="submit">
-              Pagar {formatarBRL(total)}
+            <button
+              className="botao botao--primario botao--largo"
+              type="submit"
+              disabled={processando}
+            >
+              {processando ? 'Processando compra…' : `Pagar ${formatarBRL(total)}`}
             </button>
+
+            <p className="apenas-leitor-de-tela" role="status">
+              {processando ? 'Processando compra…' : ''}
+            </p>
 
             <Link className="botao botao--secundario botao--largo" to="/">
               Voltar ao carrinho
