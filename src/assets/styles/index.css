@@ -85,11 +85,21 @@ h2 {
 }
 
 .painel {
+  padding: 1.25rem;
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   box-shadow: var(--sombra);
-  padding: 1.25rem;
+}
+
+.rodape {
+  margin-top: auto;
+  padding: 1.5rem 1rem;
+  background-color: var(--cor-superficie);
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+  font-size: 0.875rem;
+  text-align: center;
 }
 
 /* ===== Cabecalho ===== */
@@ -390,6 +400,23 @@ h2 {
   border-radius: 4px;
 }
 
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  background-color: var(--cor-primaria);
+  border-radius: 0 0 var(--raio) 0;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pular-para-conteudo:focus {
+  top: 0;
+  left: 0;
+}
+
 .apenas-leitor-de-tela {
   position: absolute;
   width: 1px;
@@ -436,5 +463,10 @@ h2 {
 
   .item__nome {
     font-size: 1.0625rem;
+  }
+
+  .resumo {
+    position: sticky;
+    top: 1.5rem;
   }
 }
