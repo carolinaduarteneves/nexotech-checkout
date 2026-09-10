@@ -8,8 +8,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        <a className="pular-para-conteudo" href="#conteudo">
+          Pular para o conteúdo
+        </a>
+
         <Cabecalho />
-        <main className="conteudo">
+
+        <main className="conteudo" id="conteudo" tabIndex={-1}>
           <Routes>
             <Route path="/" element={<Carrinho />} />
             <Route path="/pagamento" element={<Pagamento />} />
@@ -18,6 +23,13 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
+
+        <footer className="rodape">
+          <p>
+            Loja fictícia criada para um mini-projeto de Front-End React. A compra é simulada no
+            navegador: nenhum dado de cartão é enviado ou armazenado.
+          </p>
+        </footer>
       </div>
     </BrowserRouter>
   )
