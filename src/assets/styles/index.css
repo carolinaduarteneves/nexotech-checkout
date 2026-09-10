@@ -176,6 +176,112 @@ h2 {
   width: 100%;
 }
 
+/* ===== Avisos de estado ===== */
+.subtitulo {
+  margin-top: 0.5rem;
+  color: var(--cor-texto-suave);
+}
+
+.aviso {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-texto-suave);
+}
+
+.aviso--erro {
+  background-color: var(--cor-erro-suave);
+  border-color: var(--cor-erro);
+  color: var(--cor-erro);
+  font-weight: 600;
+}
+
+/* ===== Carrinho ===== */
+.carrinho {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.lista-itens {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.item__dados {
+  flex: 1 1 60%;
+}
+
+.item__nome {
+  font-size: 1rem;
+}
+
+.item__descricao,
+.item__valores {
+  color: var(--cor-texto-suave);
+  font-size: 0.875rem;
+}
+
+.item__subtotal {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.item__rotulo {
+  display: block;
+  color: var(--cor-texto-suave);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ===== Resumo da compra ===== */
+.resumo__linhas {
+  margin: 1rem 0 1.25rem;
+}
+
+.resumo__linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.resumo__linha dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.resumo__linha--total {
+  padding-top: 0.75rem;
+  border-bottom: 0;
+  font-size: 1.125rem;
+}
+
+.resumo__linha--total dd {
+  color: var(--cor-primaria);
+  font-weight: 700;
+}
+
 /* ===== Acessibilidade ===== */
 :focus-visible {
   outline: 3px solid var(--cor-primaria);
@@ -219,5 +325,14 @@ h2 {
 
   .cabecalho__interno {
     padding: 1.25rem 1.5rem;
+  }
+
+  .carrinho {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+  }
+
+  .item__nome {
+    font-size: 1.0625rem;
   }
 }
