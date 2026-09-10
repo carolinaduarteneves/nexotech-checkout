@@ -282,6 +282,64 @@ h2 {
   font-weight: 700;
 }
 
+/* ===== Pagamento ===== */
+.pagamento {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.formulario {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.formulario__linha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.campo__rotulo {
+  font-weight: 600;
+}
+
+.campo__dica {
+  color: var(--cor-texto-suave);
+  font-size: 0.8125rem;
+}
+
+.campo__entrada {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 0.875rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: border-color 0.2s ease;
+}
+
+.campo__entrada:hover {
+  border-color: var(--cor-primaria);
+}
+
+.campo__entrada--invalida {
+  background-color: var(--cor-erro-suave);
+  border-color: var(--cor-erro);
+}
+
+.campo__erro {
+  color: var(--cor-erro);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 /* ===== Acessibilidade ===== */
 :focus-visible {
   outline: 3px solid var(--cor-primaria);
@@ -327,7 +385,8 @@ h2 {
     padding: 1.25rem 1.5rem;
   }
 
-  .carrinho {
+  .carrinho,
+  .pagamento {
     grid-template-columns: minmax(0, 1fr) 20rem;
     align-items: start;
   }
