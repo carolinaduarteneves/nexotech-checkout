@@ -9,6 +9,7 @@
   --cor-primaria-escura: #3730a3;
   --cor-primaria-suave: #eef0fc;
   --cor-sucesso: #0b7a52;
+  --cor-sucesso-suave: #e4f4ec;
   --cor-erro: #b81d3f;
   --cor-erro-suave: #fdeef2;
   --raio: 12px;
@@ -338,6 +339,48 @@ h2 {
   color: var(--cor-erro);
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+/* ===== Telas de resultado ===== */
+.resultado {
+  max-width: 34rem;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.resultado__selo {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.resultado__selo--aprovado {
+  background-color: var(--cor-sucesso-suave);
+  color: var(--cor-sucesso);
+}
+
+.resultado__selo--recusado {
+  background-color: var(--cor-erro-suave);
+  color: var(--cor-erro);
+}
+
+.resultado__titulo {
+  outline-offset: 6px;
+}
+
+.resultado__titulo--recusado {
+  color: var(--cor-erro);
+}
+
+.resultado__texto {
+  margin: 0.75rem 0 1.5rem;
+  color: var(--cor-texto-suave);
 }
 
 /* ===== Acessibilidade ===== */
