@@ -5,13 +5,15 @@ export default function Cabecalho() {
   return (
     <header className="cabecalho">
       <div className="cabecalho__interno">
-        <Link className="cabecalho__link" to="/">
-          <img className="cabecalho__logo" src={logo} alt="" />
-          <span>
-            <span className="cabecalho__marca">NexoTech</span>
-            <span className="cabecalho__descricao">Checkout da loja</span>
-          </span>
-        </Link>
+        <nav aria-label="Principal">
+          <Link className="cabecalho__link" to="/">
+            <img className="cabecalho__logo" src={logo} alt="" />
+            <span>
+              <span className="cabecalho__marca">NexoTech</span>
+              <span className="cabecalho__descricao">Checkout da loja</span>
+            </span>
+          </Link>
+        </nav>
       </div>
     </header>
   )
