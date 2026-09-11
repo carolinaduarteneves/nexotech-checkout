@@ -12,8 +12,8 @@ sem recarregar a página.
 | Recurso | Link |
 | --- | --- |
 | Repositório | https://github.com/carolinaduarteneves/nexotech-checkout |
-| Quadro no Trello | _preencher antes da entrega_ |
-| Vídeo de apresentação | _preencher antes da entrega_ |
+| Quadro no Trello | https://trello.com/b/RmectotY/nexotech-checkout |
+| Vídeo de apresentação | https://youtu.be/muTZKL2D4FA |
 
 ## Qual problema o projeto resolve
 
@@ -213,6 +213,8 @@ tarefa, sempre criada a partir da `develop` e integrada por pull request.
 | `feature/acessibilidade-responsividade` | link de pular conteúdo, rodapé e resumo fixo |
 | `feature/documentacao` | este README |
 | `feature/ajuste-estado-processando` | reset garantido do estado de processamento em caso de erro |
+| `feature/acessibilidade-cabecalho` | reforçar a navegação por leitor de tela envolvendo o link do cabeçalho em uma tag nav com rótulo acessível |
+| `feature/atualiza-links-entrega` | atualizar o README com os links finais do Trello e do vídeo, e documentar a branch de acessibilidade do cabeçalho |
 
 ## Melhorias possíveis
 
