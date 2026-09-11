@@ -212,6 +212,7 @@ tarefa, sempre criada a partir da `develop` e integrada por pull request.
 | `feature/telas-resultado` | telas de sucesso e falha compartilhando a mesma página |
 | `feature/acessibilidade-responsividade` | link de pular conteúdo, rodapé e resumo fixo |
 | `feature/documentacao` | este README |
+| `feature/ajuste-estado-processando` | reset garantido do estado de processamento em caso de erro |
 
 ## Melhorias possíveis
 
