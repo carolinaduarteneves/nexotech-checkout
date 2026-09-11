@@ -8,9 +8,14 @@ export function usePagamento() {
 
   async function pagar(dadosDoCartao) {
     setProcessando(true)
-    const { aprovado } = await processarPagamento(dadosDoCartao)
-    setProcessando(false)
-    navigate(aprovado ? '/sucesso' : '/falha')
+
+    // O finally evita que o botão fique travado se a simulação virar uma chamada que rejeita.
+    try {
+      const { aprovado } = await processarPagamento(dadosDoCartao)
+      navigate(aprovado ? '/sucesso' : '/falha')
+    } finally {
+      setProcessando(false)
+    }
   }
 
   return { processando, pagar }
